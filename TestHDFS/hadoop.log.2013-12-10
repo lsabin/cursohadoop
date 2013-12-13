@@ -1,0 +1,1 @@
+2013-12-10 14:36:46,965 WARN org.apache.hadoop.conf.Configuration: fs.default.name is deprecated. Instead, use fs.defaultFS

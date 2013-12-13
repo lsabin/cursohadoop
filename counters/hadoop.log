@@ -1,0 +1,10 @@
+2013-12-12 13:53:42,892 ERROR org.apache.hadoop.mrunit.TestDriver: Expected no outputs; got 1 outputs.
+2013-12-12 13:53:42,894 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (.jpg HTTP/1.1" 200 5148, 1) at position 0.
+2013-12-12 13:56:14,258 ERROR org.apache.hadoop.mrunit.TestDriver: Expected no outputs; got 1 outputs.
+2013-12-12 13:56:14,266 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (jpg, 1) at position 0.
+2013-12-12 13:57:26,735 ERROR org.apache.hadoop.mrunit.TestDriver: Expected no outputs; got 1 outputs.
+2013-12-12 13:57:26,743 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (png, 1) at position 0.
+2013-12-12 13:57:36,374 ERROR org.apache.hadoop.mrunit.TestDriver: Expected no outputs; got 1 outputs.
+2013-12-12 13:57:36,377 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (png, 1) at position 0.
+2013-12-12 14:04:44,903 ERROR org.apache.hadoop.mrunit.TestDriver: Expected no outputs; got 1 outputs.
+2013-12-12 14:04:44,908 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (png, 1) at position 0.

@@ -1,0 +1,35 @@
+2013-12-10 10:42:03,925 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1, 1) at position 0.
+2013-12-10 10:42:25,319 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1, 0) at position 0.
+2013-12-10 10:43:52,994 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1, 0) at position 0.
+2013-12-10 10:44:18,871 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:44:39,342 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:45:16,768 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:50:03,682 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:50:03,683 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (10.1.12.233, 1) at position 0.
+2013-12-10 10:50:37,926 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:50:37,930 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.233, 2) at position 1.
+2013-12-10 10:50:37,930 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (10.1.12.233, 1) at position 0.
+2013-12-10 10:51:07,353 ERROR org.apache.hadoop.mrunit.TestDriver: Matched expected output (10.1.12.233, 1) but at incorrect position 0 (expected position 1)
+2013-12-10 10:51:07,354 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:51:30,871 ERROR org.apache.hadoop.mrunit.TestDriver: Matched expected output (10.1.12.233, 1) but at incorrect position 0 (expected position 1)
+2013-12-10 10:51:30,876 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:52:05,036 ERROR org.apache.hadoop.mrunit.TestDriver: Matched expected output (10.1.12.233, 1) but at incorrect position 0 (expected position 1)
+2013-12-10 10:52:05,039 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 0.
+2013-12-10 10:52:21,759 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 1.
+2013-12-10 10:53:08,738 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1) at position 1.
+2013-12-10 10:54:08,937 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1)
+2013-12-10 10:58:04,902 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1)
+2013-12-10 11:04:07,366 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1)
+2013-12-10 11:11:56,323 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 1)
+2013-12-10 11:23:20,487 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 0.
+2013-12-10 11:23:20,488 ERROR org.apache.hadoop.mrunit.TestDriver: Received unexpected output (10.1.12.233, 3) at position 0.
+2013-12-10 11:23:38,033 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 0.
+2013-12-10 11:23:38,034 ERROR org.apache.hadoop.mrunit.TestDriver: Matched expected output (10.1.12.233, 3) but at incorrect position 0 (expected position 1)
+2013-12-10 11:23:45,967 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.
+2013-12-10 11:24:20,464 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.
+2013-12-10 11:28:33,898 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.
+2013-12-10 11:28:50,391 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 0.
+2013-12-10 11:28:50,392 ERROR org.apache.hadoop.mrunit.TestDriver: Matched expected output (10.1.12.233, 3) but at incorrect position 0 (expected position 1)
+2013-12-10 11:29:29,335 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.
+2013-12-10 12:15:52,597 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.
+2013-12-10 12:16:16,884 ERROR org.apache.hadoop.mrunit.TestDriver: Missing expected output (10.1.12.232, 2) at position 1.

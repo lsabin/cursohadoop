@@ -28,15 +28,18 @@ public class ProcessLogs extends Configured implements Tool {
 	      
 	      job.setMapperClass(LogFileMapper.class);
 	      job.setReducerClass(LogFileReducer.class);
-	      job.setCombinerClass(LogFileReducer.class);
+	      //job.setCombinerClass(LogFileReducer.class)
+	      job.setPartitionerClass(MyPartitioner.class);
 	      
 	      
 	      job.setMapOutputKeyClass(Text.class);    
-	      job.setMapOutputValueClass(IntWritable.class);
+	      job.setMapOutputValueClass(Text.class);
 
 	       
 	      job.setOutputKeyClass(Text.class);
-	      job.setOutputValueClass(IntWritable.class);    
+	      job.setOutputValueClass(IntWritable.class);
+	      
+	      job.setNumReduceTasks(12);
 
 
 	      boolean success = job.waitForCompletion(true);
