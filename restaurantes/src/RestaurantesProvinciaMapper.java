@@ -5,6 +5,7 @@ import org.apache.hadoop.io.ShortWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 
 
 
@@ -18,6 +19,11 @@ public class RestaurantesProvinciaMapper
 	private RestauranteWritable restaurante = new RestauranteWritable();
 	private Text nombreValoracion = new Text();
 	private Text txProvincia = new Text();
+	
+	private MultipleOutputs<ProvinciaDireccionWritable, Text> multipleOutputs;
+	
+	
+	
 	
 
 
@@ -41,7 +47,6 @@ public class RestaurantesProvinciaMapper
     	String direccionCompuesta = direccion.toString();
     	String direccionSimple = "";
     	
-    	System.out.println("vamos a obtener la provincia de *" + direccionCompuesta + "*");
     	
     	String provincia = "";
     	if (!"".equals(direccionCompuesta)) {
@@ -55,20 +60,45 @@ public class RestaurantesProvinciaMapper
     		}
     	}
     	
-    	System.out.println("Provincia: " + provincia);
-    	
     	
     	nombreValoracion.set("[" + nombre + "," + valoracion + "]" );
     	
     	txProvincia.set(provincia);
     	direccion.set(direccionSimple);
     	claveSalida.setValores(txProvincia, direccion);
+    	
+    	short valorValoracion = Short.parseShort(valoracion);
+    	
+    	if (valorValoracion > 2) {
+    		multipleOutputs.write(claveSalida, nombreValoracion,"recomendados/rest");
+    	} else {
+    		multipleOutputs.write(claveSalida, nombreValoracion,"no_recomendados/rest");
+    	}
    
-	    context.write(claveSalida, nombreValoracion);
+	    //context.write(claveSalida, nombreValoracion);
     }
     
 
   }
-  
+
+
+	
+	@Override
+	protected void cleanup(org.apache.hadoop.mapreduce.Mapper.Context context)
+			throws IOException, InterruptedException {
+		multipleOutputs.close();
+	
+	}
+	
+	
+	
+	@Override
+	protected void setup(org.apache.hadoop.mapreduce.Mapper.Context context)
+			throws IOException, InterruptedException {
+		
+		
+		multipleOutputs = new MultipleOutputs<ProvinciaDireccionWritable, Text>(context);
+	}
+	  
   
 }

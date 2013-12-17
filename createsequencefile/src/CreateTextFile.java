@@ -2,46 +2,42 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.SequenceFile.CompressionType;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.compress.SnappyCodec;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class CreateSequenceFile extends Configured implements Tool {
+public class CreateTextFile extends Configured implements Tool {
 
   @Override
   public int run(String[] args) throws Exception {
 
     if (args.length != 2) {
-      System.out.printf("Usage: CreateSequenceFile <input dir> <output dir>\n");
+      System.out.printf("Usage: CreateTextFile <input dir> <output dir>\n");
       return -1;
     }
 
     Job job = new Job(getConf());
-    job.setJarByClass(CreateSequenceFile.class);
-    job.setJobName("Create Sequence File");
+    job.setJarByClass(CreateTextFile.class);
+    job.setJobName("Create CreateTextFile File");
    
-   
-    FileInputFormat.setInputPaths(job, new Path(args[0]));
-    SequenceFileOutputFormat.setOutputPath(job, new Path(args[1]));
+    
+    SequenceFileInputFormat.setInputPaths(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    
+    job.setInputFormatClass(SequenceFileInputFormat.class);
 
-    job.setMapperClass(CreateSequenceFileMapper.class);
-    
-    job.setOutputFormatClass(SequenceFileOutputFormat.class);
-    
-    
-    FileOutputFormat.setCompressOutput(job, true);
-    FileOutputFormat.setOutputCompressorClass(job, SnappyCodec.class);
-    
-    SequenceFileOutputFormat.setOutputCompressionType(job, CompressionType.BLOCK);
+    job.setMapperClass(CreateTextFileMapper.class);
     
 
-    job.setOutputKeyClass(LongWritable.class);
+    job.setOutputKeyClass(NullWritable.class);
     job.setOutputValueClass(Text.class);
     
 
@@ -50,7 +46,7 @@ public class CreateSequenceFile extends Configured implements Tool {
   }
 
   public static void main(String[] args) throws Exception {
-    int exitCode = ToolRunner.run(new Configuration(), new CreateSequenceFile(), args);
+    int exitCode = ToolRunner.run(new Configuration(), new CreateTextFile(), args);
     System.exit(exitCode);
   }
 }
