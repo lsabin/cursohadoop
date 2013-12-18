@@ -19,8 +19,8 @@ public class StockCount {
 
     Job job = new Job();
     job.setJarByClass(StockCount.class);
-    job.setJobName("StockCount");
-
+    job.setJobName("StockCount");   
+    
     FileInputFormat.setInputPaths(job, new Path(args[0]));
     FileOutputFormat.setOutputPath(job, new Path(args[1]));
 

@@ -2,48 +2,50 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
 public class StringPairWritable implements WritableComparable<StringPairWritable> {
 
-  String left;
-  String right;
+  Text left;
+  Text right;
 
   /**
    * Empty constructor - required for serialization.
    */ 
   public StringPairWritable() {
+	  this(new Text(""), new Text(""));
 
   }
 
   /**
    * Constructor with two String objects provided as input.
    */ 
-  public StringPairWritable(String left, String right) {
+  public StringPairWritable(Text left, Text right) {
     this.left = left;
     this.right = right;    
+  }
+  
+  
+  public void setValores(Text left, Text right) {
+	  this.left = left;
+	  this.right = right;
   }
 
   /**
    * Serializes the fields of this object to out.
    */
   public void write(DataOutput out) throws IOException {
-    
-    /*
-     * TODO implement
-     */
-    
+	  left.write(out);
+	  right.write(out);
   }
 
   /**
    * Deserializes the fields of this object from in.
    */
   public void readFields(DataInput in) throws IOException {
-    
-    /*
-     * TODO implement
-     */
-    
+	  left.readFields(in);
+	  right.readFields(in);
   }
 
   /**
@@ -52,13 +54,8 @@ public class StringPairWritable implements WritableComparable<StringPairWritable
    * then the right strings are compared.
    */
   public int compareTo(StringPairWritable other) {
-    int ret = 0;
     
-    /*
-     * TODO implement
-     */
-    
-    return ret;
+    return toString().compareTo(other.toString());
   }
 
   /**
@@ -108,10 +105,8 @@ public class StringPairWritable implements WritableComparable<StringPairWritable
    */
   @Override
   public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((left == null) ? 0 : left.hashCode());
-    result = prime * result + ((right == null) ? 0 : right.hashCode());
-    return result;
+	  
+	  return toString().hashCode();
+
   }
 }
