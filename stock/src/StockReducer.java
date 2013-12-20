@@ -28,14 +28,9 @@ public class StockReducer extends Reducer<IdProductoDiaWritable, DiaStockWritabl
 			
 			cantidadStock = entrada.get() - salida.get();
 			
-		
-			
 			cantidad += cantidadStock;
 			
-			
-			System.out.println("dif: " + cantidadStock + ", stock: " + cantidad);
-			
-			textoSalida.set(diaSalida + "," + cantidad);
+			textoSalida.set(diaSalida + "\t" + cantidad);
 			context.write(claveSalida, textoSalida);
 		}
 		

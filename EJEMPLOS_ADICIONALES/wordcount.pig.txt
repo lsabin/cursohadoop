@@ -1,0 +1,8 @@
+a = LOAD 'shakespeare' USING TextLoader AS (line:chararray);
+b = FOREACH a GENERATE FLATTEN(TOKENIZE(line));
+c = FOREACH b GENERATE UCFIRST(LOWER(TRIM($0)));
+d = GROUP c BY $0;
+e = FOREACH d GENERATE $0, COUNT($1);
+f = ORDER e BY $1 DESC;
+g = LIMIT f 20;
+STORE g INTO 'wordcounts';
